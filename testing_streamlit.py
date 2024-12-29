@@ -31,7 +31,6 @@ filtered_degrees1 = data[
 selected_degree1 = st.selectbox("Select Degree 1:", filtered_degrees1, key="degree1")
 
 # Degree Comparison Options
-
 st.subheader("Degree Comparison Options")
 compare_second_degree = st.radio("Do you want to compare with a second degree?", ["No", "Yes"], index=1)
 
@@ -41,13 +40,17 @@ if compare_second_degree == "Yes":
     selected_university2 = st.selectbox("Select the University for Degree 2:", universities, key="uni2")
     filtered_schools2 = data[data["University"] == selected_university2]["School"].unique()
     selected_school2 = st.selectbox("Select the School for Degree 2:", filtered_schools2, key="school2")
+    # Exclude Degree 1 from Degree 2 options
     filtered_degrees2 = data[
         (data["University"] == selected_university2) & 
         (data["School"] == selected_school2)
     ]["Degree"].unique()
+    filtered_degrees2 = [degree for degree in filtered_degrees2 if degree != selected_degree1]
     selected_degree2 = st.selectbox("Select Degree 2:", filtered_degrees2, key="degree2")
 else:
     selected_university2, selected_school2, selected_degree2 = None, None, None
+
+
 
 # Step 2: Select Time Frame
 years = data["Year"].unique()
