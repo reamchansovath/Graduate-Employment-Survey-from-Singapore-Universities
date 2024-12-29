@@ -32,7 +32,7 @@ selected_degree1 = st.selectbox("Select Degree 1:", filtered_degrees1, key="degr
 
 # Degree Comparison Options
 st.subheader("Degree Comparison Options")
-compare_second_degree = st.radio("Do you want to compare with a second degree?", ["No", "Yes"], index=1)
+compare_second_degree = st.radio("Do you want to compare with a second degree?", ["No", "Yes"], index=0)
 
 # Select Degree 2 if comparison is enabled
 if compare_second_degree == "Yes":
