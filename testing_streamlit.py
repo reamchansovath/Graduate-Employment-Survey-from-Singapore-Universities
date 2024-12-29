@@ -2,15 +2,11 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import numpy as np
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense
-from sklearn.preprocessing import MinMaxScaler
 
 # Load your dataset
 @st.cache_data
 def load_data():
-    data = pd.read_csv("cleaned_graduate_employment_data_2.csv")  # Ensure the CSV file is in the same directory or provide full path
+    data = pd.read_csv("/Users/reamchansovath/Downloads/cleaned_graduate_employment_data_2.csv")  # Ensure the CSV file is in the same directory or provide full path
     return data
 
 # Load data
