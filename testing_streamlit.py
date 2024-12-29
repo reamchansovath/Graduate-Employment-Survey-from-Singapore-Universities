@@ -14,7 +14,7 @@ data = load_data()
 
 # Title and Description
 st.title("Graduate Employment Survey from Singapore Universities")
-st.write("Ever wondered how graduate employment trends differ between degrees? Which field secures the highest salaries or the highest employment rate? Explore and compare one or two degrees with this interactive tool to find out!")
+st.write("Curious about graduate employment salaries and employment rates of Singapore Universities? Select up to 2 degrees below to find out!")
 
 # Step 1: Degree Selection
 
